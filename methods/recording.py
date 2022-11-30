@@ -14,7 +14,7 @@ def record():
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
-    RECORD_SECONDS = 180
+    RECORD_SECONDS = 5 #180
     WAVE_OUTPUT_FILENAME = "output.wav"
 
     p = pyaudio.PyAudio()
@@ -45,10 +45,12 @@ def record():
     wf.setframerate(RATE)
     wf.writeframes(b''.join(frames))
     wf.close()
+    record_file = 'output.wav'
+    return record_file
 
-
-def speech_recognition():
-    sample_audio = speech_r.AudioFile('output.wav')
+@eel.expose
+def speech_recognition(record_file):
+    sample_audio = speech_r.AudioFile(record_file)
     r = speech_r.Recognizer()
     with sample_audio as audio_file:
         r.adjust_for_ambient_noise(audio_file)
@@ -59,15 +61,15 @@ def speech_recognition():
         text = ''
     return text
 
-
-def temp(text):
-    with contextlib.closing(wave.open('output.wav', 'r')) as f:
+@eel.expose
+def temp(text, record_file):
+    with contextlib.closing(wave.open(record_file, 'r')) as f:
         frames = f.getnframes()
         rate = f.getframerate()
         duration = frames / float(rate)
     words = len(text.split())
     koef = words / duration
-    if 2 < koef < 3:
+    if 1.5 < koef < 3:
         return 'Темп речи нормальный'
     if koef > 3:
         return 'Темп речи слишком быстрый'
@@ -84,7 +86,7 @@ unnecessary_words = [
     'ничего себе', 'достаточно', 'а-а', 'э-э'
 ]
 
-
+@eel.expose
 def word_analysis(text):
     list = []
     for word in unnecessary_words:
@@ -129,10 +131,14 @@ def frequency():
     plt.xlim(0, t_audio)
     plt.show()
 
+@eel.expose
+def test():
+    return 'приветы'
 
-record()
-text = speech_recognition()
-print(text)
-print(temp(text))
-print('Слова паразиты: ', word_analysis(text))
-frequency()
+#
+# record()
+# text = speech_recognition()
+# print(text)
+# print(temp(text))
+# print('Слова паразиты: ', word_analysis(text))
+# frequency()

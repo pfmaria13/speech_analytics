@@ -1,9 +1,11 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
   <title></title>
   <link rel="stylesheet" href="style2.css" />
+    <script type="text/javascript" src={% static "main/js/rec.js" %}></script>
 </head>
 <body>
     <section class="recent-posts">
@@ -12,10 +14,10 @@
             <div class="recent-column">
                 <ul class="text-navigation">
                     <li class="text-navigation-item">
-                        <a href="/ready.html">готовый текст</a>
+                        <a href="/readytext.html">готовый текст</a>
                     </li>
                     <li class="text-navigation-item">
-                        <a href="/mine.html">мой текст</a>
+                        <a href="/minetext.html">мой текст</a>
                     </li>
                     <li class="text-navigation-item">
                         <a href="/without.html">без текста</a>
@@ -24,9 +26,10 @@
                 <div class="microphone">
                     <img src="img/micro.png" alt="">
                 </div>
-                <button>Начать запись</button>
+                <button type="button"  onclick="recording(this)" id="submit" data-show="true">Начать запись</button>
+
             </div>
-        </div>    
-    </section>   
+        </div>
+    </section>
 </body>
 </html>

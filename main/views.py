@@ -21,3 +21,4 @@ def minetext(request):
 
 def without(request):
     return render(request, 'main/without.html')
+
