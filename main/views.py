@@ -11,14 +11,14 @@ def main(request):
     return render(request, 'main/main.html', data)
 
 
-def readytext(request):
-    return render(request, 'main/readytext.html')
+def ready(request):
+    return render(request, 'audio/ready.html')
 
 
-def minetext(request):
-    return render(request, 'main/minetext.html')
+def mine(request):
+    return render(request, 'audio/mine.html')
 
 
 def without(request):
-    return render(request, 'main/without.html')
+    return render(request, 'audio/without.html')
 

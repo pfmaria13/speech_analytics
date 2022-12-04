@@ -4,32 +4,29 @@
 <head>
   <meta charset="utf-8" />
   <title></title>
-  <link rel="stylesheet" href="style2.css" />
-    <script type="text/javascript" src={% static "main/js/rec.js" %}></script>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+  <script type="text/javascript" src={% static "main/js/voice.js" %}></script>
 </head>
 <body>
     <section class="recent-posts">
         <div class="container">
         <div class="recent-posts-items">
             <div class="recent-column">
-                <ul class="text-navigation">
-                    <li class="text-navigation-item">
-                        <a href="/readytext.html">готовый текст</a>
-                    </li>
-                    <li class="text-navigation-item">
-                        <a href="/minetext.html">мой текст</a>
-                    </li>
-                    <li class="text-navigation-item">
-                        <a href="/without.html">без текста</a>
-                    </li>
-                </ul>
-                <div class="microphone">
-                    <img src="img/micro.png" alt="">
+                <div class="multi-button">
+                    <button>готовый текст</button>
+                    <button>мой текст</button>
+                    <button>без текста</button>
                 </div>
-                <button type="button"  onclick="recording(this)" id="submit" data-show="true">Начать запись</button>
-
+                <div class="microphone">
+                    <img src="{% static 'main/img/micro.png' %}" width="217" height="217">
+                </div>
+                <div class="multi-button start">
+                <button type="button"  onclick="recording(this)" id="start" data-show="true">&emsp;&emsp;&emsp;&emsp;Начать запись&emsp;&emsp;&emsp;&emsp;</button>
+                <button type="button"  onclick="recording(this)" id="stop" data-show="false">&emsp;&emsp;&emsp;&emsp;Закончить запись&emsp;&emsp;&emsp;&emsp;</button>
+                <div id="div1">Блок</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </div>    
+    </section>   
 </body>
 </html>

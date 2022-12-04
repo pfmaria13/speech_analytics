@@ -5,10 +5,10 @@ from django.http import HttpResponseRedirect, HttpResponseNotFound
 
 def without(request):
     return render(request, 'audio/without.html')
-def readytext(request):
-    return render(request, 'audio/readytext.html')
-def minetext(request):
-    return render(request, 'audio/minetext.html')
+def ready(request):
+    return render(request, 'audio/ready.html')
+def mine(request):
+    return render(request, 'audio/mine.html')
 
 # получение данных из бд
 def tips(request):

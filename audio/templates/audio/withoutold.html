@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="style2.css" />
+    <script type="text/javascript" src={% static "main/js/voice.js" %}></script>
+</head>
+<body>
+    <section class="recent-posts">
+        <div class="container">
+        <div class="recent-posts-items">
+            <div class="recent-column">
+                <ul class="text-navigation">
+                    <li class="text-navigation-item">
+                        <a href="/readytext.html">готовый текст</a>
+                    </li>
+                    <li class="text-navigation-item">
+                        <a href="/minetext.html">мой текст</a>
+                    </li>
+                    <li class="text-navigation-item">
+                        <a href="/without.html">без текста</a>
+                    </li>
+                </ul>
+                <div class="microphone">
+                    <img src="img/micro.png" alt="">
+                </div>
+                <button type="button"  onclick="recording(this)" id="start" data-show="true">Начать запись</button>
+                <button type="button"  onclick="recording(this)" id="stop" data-show="false">Закончить запись</button>
+                <div id="div1">Блок</div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

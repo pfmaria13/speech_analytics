@@ -101,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+SECRET_KEY = 'django-insecure-=q=tq(zl(k24ay*&db((f0%y$(67ox=rv*@@-fy+hyo*!jby4m'
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 

@@ -6,6 +6,3 @@ class RecordingForm(ModelForm):
         model = Recordings
         fields = ['speed', 'text']
 
-        widgets = {
-
-        }

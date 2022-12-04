@@ -2,33 +2,40 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <link rel="stylesheet" href="{% static 'main/css/mainstyle.css' %}">
-
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="{% static 'main/css/main-style.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script type="text/javascript" src={% static "main/js/main.js" %}></script>
 </head>
 <body>
-
     <header class="main-header">
-        <div class='container'></div>
+        <div class='container'>
+            <p class="logo">
+                <img src="{% static 'main/img/Ellipse 1.svg' %}" alt="logo" width="40" height="40">
+            </p>
+        </div>
     </header>
     <main>
         <section class="hero">
             <div class="container">
                 <div class="content">
                     <h1 class="hello_title">SHADOW</h1>
-                    <div class="hello-text">
-                        сервис для помощи при подготовке к публичным выступлениям
-                    </div>
+                </div>
+                <div class="hello-text">
+                    сервис для помощи при подготовке&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;к публичным выступлениям
                 </div>
             </div>
           </section>
           <section class="recent-posts">
             <div class="container">
-                <div class="woman-avatar">
-                    <img src="{% static 'main/img/e 1.png' %}" alt="">
+                <div class="woman-avatar" >
+                    <img src="{% static 'main/img/e 1.png' %}" alt="" { height: 100% }>
                 </div>
                 <h1 class="title">Публичные выступления нужны</h1>
+                <div class="rectangle"></div>
                 <ul class="reasons-use">
                     <li class="reasons-use-item">для приёма на работу</li>
                     <li class="reasons-use-item">для подачи важной информации</li>
@@ -41,34 +48,41 @@
             <div class="container">
             <div class="recent-posts-items">
                 <div class="recent-column">
-                    <ul class="text-navigation">
-                        <li class="text-navigation-item">
-                            <a href="{% url 'readytext' %}">готовый текст</a>
-                        </li>
-                        <li class="text-navigation-item">
-                            <a href="{% url 'minetext' %}">мой текст</a>
-                        </li>
-                        <li class="text-navigation-item">
-                            <a href="{% url 'without' %}">без текста</a>
-                        </li>
-                    </ul>
-                    <a href="{% url 'without' %}">Начать запись</a>
+                    <div class="multi-button">
+                        <button  type="button"  onclick="ready()">готовый текст</button>
+                        <button  type="button"  onclick="mine()">мой текст</button>
+                        <button type="button"  onclick="without()">без текста</button>
+                    </div>
+                    <div class="microphone">
+                        <img src="{% static 'main/img/micro.png' %}" width="350" height="350">
+                    </div>
+                    <div class="multi-button start">
+                    <button>&emsp;&emsp;&emsp;&emsp;Начать запись&emsp;&emsp;&emsp;&emsp;</button>
+                    </div>
                 </div>
-            </div>    
+            </div>
         </section>
     </main>
     <footer class="main-footer">
-        <ul class="social-list">
-            <li class="social-list-item">
-              <a href="#"><img src="img\spider-man.png" alt="Facebook" width="40" height="40"></a>
+        <p class="connection">Связаться с нами</p>
+        <ul class="wrapper">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <span><i class="fab fa-facebook-f"></i></span>
             </li>
-            <li class="social-list-item">
-                <a href="#"><img src="img\spider-man.png" alt="Instagram" width="40" height="40"></a>
-              </li>
-            <li class="social-list-item">
-                <a href="#"><img src="img\spider-man.png" alt="Twitter" width="40" height="40"></a>
+            <li class="icon twitter">
+              <span class="tooltip">Twitter</span>
+              <span><i class="fab fa-twitter"></i></span>
+            </li>
+            <li class="icon instagram">
+              <span class="tooltip">Instagram</span>
+              <span><i class="fab fa-instagram"></i></span>
+            </li>
+            <li class="icon github">
+              <span class="tooltip">Github</span>
+              <span><i class="fab fa-github"></i></span>
             </li>
           </ul>
-    </footer>  
+    </footer>
 </body>
 </html>
