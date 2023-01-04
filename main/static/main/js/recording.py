@@ -1,5 +1,5 @@
 import contextlib
-import eel as eel
+import eel
 import librosa
 import pyaudio
 import wave
@@ -8,13 +8,12 @@ import keyboard
 
 
 
-@eel.expose
 def record():
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
-    RECORD_SECONDS = 5 #180
+    RECORD_SECONDS = 180
     WAVE_OUTPUT_FILENAME = "output.wav"
 
     p = pyaudio.PyAudio()
@@ -33,16 +32,17 @@ def record():
         if keyboard.is_pressed('Space'):
             break
 
+def stop(stream, p, frames):
     print("* done recording")
 
     stream.stop_stream()
     stream.close()
     p.terminate()
 
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-    wf.setnchannels(CHANNELS)
-    wf.setsampwidth(p.get_sample_size(FORMAT))
-    wf.setframerate(RATE)
+    wf = wave.open("output.wav", 'wb')
+    wf.setnchannels(2)
+    wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
+    wf.setframerate(44100)
     wf.writeframes(b''.join(frames))
     wf.close()
     record_file = 'output.wav'
@@ -132,12 +132,9 @@ def frequency():
     plt.xlabel('Time (s)')
     plt.xlim(0, t_audio)
     plt.show()
-
 @eel.expose
 def test(record_file):
-    global r
-    r = record_file
-    return r
+    return record_file
 
 #
 # record()

@@ -1,88 +1,111 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <title></title>
-  <link rel="stylesheet" href="{% static 'main/css/main-style.css' %}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <script type="text/javascript" src={% static "main/js/main.js" %}></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main/css/normalize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/mainpage.css' %}">
+    <link href="https://fonts.cdnfonts.com/css/next-art" rel="stylesheet">
+    <script type="text/javascript" src={% static "main/js/main1.js" %}></script>
 </head>
 <body>
-    <header class="main-header">
-        <div class='container'>
-            <p class="logo">
-                <img src="{% static 'main/img/Ellipse 1.svg' %}" alt="logo" width="40" height="40">
-            </p>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="content">
-                    <h1 class="hello_title">SHADOW</h1>
-                </div>
-                <div class="hello-text">
-                    сервис для помощи при подготовке&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;к публичным выступлениям
+    <div class="container">
+        <header>
+            <a href="#" class="header-logo"></a>
+        </header>
+    </div>
+    <section>
+        <div class="container">
+            <div class="main">
+                <div class="main-text">
+                    <h1 class="main-title">VOI&nbsp;CES</h1>
+                    <p class="main-desc">сервис для помощи во время&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;подготовки к публичным выступлениям</p>
+                    <div class="main-img">
+                        <img class="main-image" src="{% static 'main/img/wonan-avatar.png' %}" alt="woman">
+                    </div>
                 </div>
             </div>
-          </section>
-          <section class="recent-posts">
-            <div class="container">
-                <div class="woman-avatar" >
-                    <img src="{% static 'main/img/e 1.png' %}" alt="" { height: 100% }>
-                </div>
-                <h1 class="title">Публичные выступления нужны</h1>
-                <div class="rectangle"></div>
-                <ul class="reasons-use">
-                    <li class="reasons-use-item">для приёма на работу</li>
-                    <li class="reasons-use-item">для подачи важной информации</li>
-                    <li class="reasons-use-item">чтобы удержать аудиторию</li>
-                    <li class="reasons-use-item">чтобы привлечь внимание</li>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="intro">
+                <p class="intro-spec">Проверьте свой уровень подготовки к публичному выступлению с помощью программы. Она подскажет какие аспекты вашего выступления следует улучшить, чтобы люди лучше вопринимали вашу речь.</p>
+                <a class="intro-btn" href="#">ПОПРОБОВАТЬ</a>
+            </div>
+            <div class="arrow-down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="public-speech">
+                    <h2 class="public-speech-title">Публичные <br> выступления нужны:</h2>
+                    <ul class="public-speech-list">
+                        <li class="public-speech-list-items">~ для приёма на работу</li>
+                        <li class="public-speech--list-items">~ для подачи важной информации</li>
+                        <li class="public-speech--list-items">~ чтобы удержать аудиторию</li>
+                        <li class="public-speech--list-items">~ чтобы привлечь внимание</li>
+                    </ul>
+            </div>
+            <div class="public-speech distance">
+                <h2 class="public-speech-title">Характеристики речи, <br> которые мы проверяем:</h2>
+                <ul class="public-speech-list">
+                    <li class="public-speech-list-items">~ темп голоса</li>
+                    <li class="public-speech--list-items">~ слова паразиты</li>
+                    <li class="public-speech--list-items">~ высота голоса</li>
                 </ul>
             </div>
-          </section>
-          <section class="recent-posts">
-            <div class="container">
-            <div class="recent-posts-items">
-                <div class="recent-column">
-                    <div class="multi-button">
-                        <button  type="button"  onclick="ready()">готовый текст</button>
-                        <button  type="button"  onclick="mine()">мой текст</button>
-                        <button type="button"  onclick="without()">без текста</button>
-                    </div>
-                    <div class="microphone">
-                        <img src="{% static 'main/img/micro.png' %}" width="350" height="350">
-                    </div>
-                    <div class="multi-button start">
-                    <button>&emsp;&emsp;&emsp;&emsp;Начать запись&emsp;&emsp;&emsp;&emsp;</button>
-                    </div>
-                </div>
+            <div class="woman-left-img">
+                <img class="woman-left-image" src="{% static 'main/img/4.png' %}" alt="woman">
             </div>
-        </section>
-    </main>
-    <footer class="main-footer">
-        <p class="connection">Связаться с нами</p>
-        <ul class="wrapper">
-            <li class="icon facebook">
-              <span class="tooltip">Facebook</span>
-              <span><i class="fab fa-facebook-f"></i></span>
-            </li>
-            <li class="icon twitter">
-              <span class="tooltip">Twitter</span>
-              <span><i class="fab fa-twitter"></i></span>
-            </li>
-            <li class="icon instagram">
-              <span class="tooltip">Instagram</span>
-              <span><i class="fab fa-instagram"></i></span>
-            </li>
-            <li class="icon github">
-              <span class="tooltip">Github</span>
-              <span><i class="fab fa-github"></i></span>
-            </li>
-          </ul>
-    </footer>
+            <div class="woman-right-img">
+                <img class="woman-right-image" src="{% static 'main/img/1.png' %}" alt="woman">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="switch-toggle switch-3 switch-candy">
+                <input id="on" name="state-d" type="radio" checked="" />
+                <label for="on" onclick="">без текста</label>
+
+                <input id="na" name="state-d" type="radio" checked="checked" />
+                <label for="na" class="disabled" onclick="">мой текст</label>
+
+                <input id="off" name="state-d" type="radio" />
+                <label for="off" onclick="">готовый текст</label>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <button class="micro" onclick="fun1()" type="button"></button>
+            <p class="start">НАЧАТЬ ЗАПИСЬ</p>
+        </div>
+    </section>
 </body>
+<footer class="main-footer">
+    <p class="connection">Связаться с нами:</p>
+    <ul class="wrapper">
+        <li class="icon facebook">
+          <span class="tooltip">Facebook</span>
+          <span><i class="fab fa-facebook-f"></i></span>
+        </li>
+        <li class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <span><i class="fab fa-instagram"></i></span>
+        </li>
+        <li class="icon github">
+          <span class="tooltip">Github</span>
+          <span><i class="fab fa-github"></i></span>
+        </li>
+      </ul>
+</footer>
 </html>

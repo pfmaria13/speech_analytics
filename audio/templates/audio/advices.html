@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'main/css/normalize.min.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/secondary_pages.css' %}">
     <link href="https://fonts.cdnfonts.com/css/next-art" rel="stylesheet">
-     <script type="text/javascript" src={% static "main/js/voice.js" %}></script>
+
 </head>
 <body>
     <section>
@@ -24,22 +24,30 @@
                 <input id="off" name="state-d" type="radio" />
                 <label for="off" onclick="">готовый текст</label>
             </div>
-        </div>
+            <div class="text_rect">
+                    Вы сказали: {{  text  }}
+                 <br> <br>
+                 {{ tip_words }}
+                <br> <br>
+                    Время: {{ time }}
+                <br> <br>
+                    {{ temp }}
 
+                <br> <br>
+                  Частота: {{ freq }}
+                <br>
+                {{tip_freq}}
+                <br> <br>
+            </div>
+        </div>
     </section>
     <section>
         <div class="container">
-             <form action="{% url 'start' %}" method="post">
+            <form action="{% url 'play' %}" method="post">
                     {% csrf_token %}
-                    <button class="micro" type="submit" name='mybtn1' value={{excel_path}} data-show="false"></button>
-             </form>
-
-<!--            <button class="micro" type="submit" name='mybtn2' value={{excel_path}}></button>-->
-            <p class="start" name="record">НАЧАТЬ ЗАПИСЬ</p>
-             <form action="{% url 'stop' %}" method="post">
-                    {% csrf_token %}
-                        <button type="submit" name='mybtn2' value={{excel_path}}>Закончить запись</button>
-             </form>
+                    <button class="go" type="submit" name='mybtn2' value={{excel_path}}></button>
+            </form>
+            <p class="start">ПРОСЛУШАТЬ ЗАПИСЬ</p>
         </div>
     </section>
 </body>

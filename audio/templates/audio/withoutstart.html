@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+  <script type="text/javascript" src={% static "main/js/voice.js" %}></script>
+  <script type="text/javascript" src="eel.js"></script>
+</head>
+<body>
+    <section class="recent-posts">
+        <div class="container">
+        <div class="recent-posts-items">
+            <div class="recent-column">
+                <div class="multi-button">
+                    <button>готовый текст</button>
+                    <button>мой текст</button>
+                    <button>без текста</button>
+                </div>
+                <div class="microphone">
+                    <img src="{% static 'main/img/micro.png' %}" width="217" height="217">
+                </div>
+                <div class="multi-button start">
+                <button type="button"  onclick="stop()" id="stop" data-show="false">&emsp;&emsp;&emsp;&emsp;Закончить запись&emsp;&emsp;&emsp;&emsp;</button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

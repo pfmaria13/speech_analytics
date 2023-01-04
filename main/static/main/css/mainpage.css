@@ -1,0 +1,411 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: url(../img/Gradient_23.jpg) no-repeat;
+    background-size: 162%;
+}
+
+.header{
+    max-width: 1276px;
+    font-family: 'NEXT ART', sans-serif;
+    margin: 0 auto;
+}
+
+.header-logo {
+    display: block;
+    width: 69px;
+    height: 40px;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    margin-left: 38px;
+    margin-top: 30px;
+}
+
+.container {
+    max-width: 1276px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.main{
+    display: flex;
+}
+
+.main-image{
+    width: 267px;
+    height: 704px;
+    margin-left: 486px;
+    margin-top: -350px;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.main-title {
+    margin-top: 250px;
+    font-family: 'NEXT ART';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 128px;
+    line-height: 124px;
+    text-align: center;
+    letter-spacing: 0.49em;
+    color: #fff;
+    margin-left: 180px;
+}
+
+.main-desc {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #FFFFFF;
+    margin-top: -80px;
+    margin-left: 180px;
+}
+
+.intro-spec {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.030em;
+    color: #FFFFFF;
+    width: 594px;
+    height: 105px;
+    margin-top: 110px;
+    margin-left: 305px;
+}
+
+.intro-btn {
+    text-align: center;
+    width: 250px;
+    height: 40px;
+    box-sizing: border-box;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    background-color: #fff;
+    border-radius: 35px;
+    font-size: 14px;
+    padding: 12px 50px;
+    margin-left: 480px;
+    color: #687CB7;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 50px;
+}
+
+.intro-btn:hover {
+    color: #fff; /* Цвет текста */
+    background: #687CB7; 
+}
+
+.intro-image {
+    width: 21px;
+    height: 28px;
+}
+
+/* .main-btn:before {
+
+} */
+
+.arrow-down {
+    margin-left: 610px;
+    margin-top: 40px;
+}
+.arrow-down span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    margin: -16px;
+    animation: arrow-down 2s infinite;
+}
+.arrow-down span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow-down span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes arrow-down {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+.public-speech{
+    border-radius: 25px;
+    border: solid;
+    color: #fff;
+    display: block;
+    text-align: center;
+    align-items: center;
+    margin-top: 160px;
+    color: #687CB7;
+    height: 178px;
+    width: 479px;
+    margin-left: 367px;
+}
+
+.public-speech-list{
+    list-style-type: none;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    margin-left: -50px;
+}
+
+.public-speech-title{
+    font-family: 'NEXT ART';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.13em;
+}
+
+.distance{
+    margin-top: 15px;
+    width: 479px;
+    height: 157px;
+}
+
+.woman-left-image{
+    width: 328px;
+    height: 366px;
+    border-radius: 88px;
+    display: flex;
+    margin-top: -335px;
+    margin-left: -20px;
+}
+
+.woman-left-image:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.woman-right-image{
+    width: 247px;
+    height: 448px;
+    border-radius: 55px;
+    margin-top: -400px;
+    margin-left: 940px;
+}
+
+.woman-right-image:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.switch-toggle {
+    float: left;
+    background: url(../img/Gradient_23.jpg) no-repeat;
+    background-size: 100%;
+    border-radius: 40px;
+    margin-left: 365px;
+    margin-top: 55px;
+    padding: 20px 95px;
+ }
+
+ .switch-toggle input {
+   position: absolute;
+   opacity: 0; 
+ }
+
+ .switch-toggle input + label {
+   float:left;
+   color: #fff;
+   cursor: pointer;
+   margin: 3px 3px; 
+ }
+
+ .switch-toggle input:checked + label {
+   background: #fff;
+   border-radius: 40px;
+   color: #687CB7;  
+ }
+
+.start {
+    font-family: 'NEXT ART';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.10em;
+    color: #687CB7;
+    font-size: 40px;
+    margin-right: 35px;
+    margin-bottom: 210px;
+}
+
+.micro {
+    background: url(../img/Group\ 17\ \(1\).png) no-repeat;
+    margin-left: 445px;
+    margin-top: 140px;
+    width: 342px; 
+    height: 342px;
+    border-radius: 50%;
+}
+
+.micro:hover {
+    cursor: pointer;
+
+    box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.15),
+        inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+        1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+
+    text-shadow: 3px -3px 5px rgba(143, 162, 199, 1),
+        -3px 3px 5px rgba(192, 151, 178, 1);
+
+    -webkit-transition: box-shadow 0.4s, text-shadow 0.5s;
+    -moz-transition: box-shadow 0.4s, text-shadow 0.5s;
+    transition: box-shadow 0.4s, text-shadow 0.5s;
+}
+
+.micro:active {
+    color: rgba(192, 181, 218, 1);
+
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.15),
+        1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+
+    text-shadow: 1px -1px 1px rgba(143, 162, 199, 0.75),
+        -1px 1px 1px rgba(192, 151, 178, 0.75);
+
+    -webkit-transition: background 0.3s color 0.2s,
+        text-shadow 0.3s box-shadow 0.3s;
+    -moz-transition: background 0.3s color 0.2s,
+        text-shadow 0.3s box-shadow 0.3s;
+    transition: background 0.3s color 0.2s, text-shadow 0.3s box-shadow 0.3s;
+}
+
+    
+
+.main-footer{
+    background-color: #716CD3;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    margin-left: 492px;
+    margin-top: -20px;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.connection{
+    font-family: 'Verdana';
+    color: #fff;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    margin-right: 40px;
+    padding-top: 35px;
+}
