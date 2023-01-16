@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Распознавание речи</title>
     <link rel="stylesheet" href="{% static 'main/css/normalize.min.css' %}">
-    <link rel="stylesheet" href="{% static 'main/css/secondary_pages.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/audio_pages.css' %}">
     <link href="https://fonts.cdnfonts.com/css/next-art" rel="stylesheet">
-
 </head>
 <body>
     <section>
@@ -47,7 +46,7 @@
                     {% csrf_token %}
                     <button class="go" type="submit" name='mybtn2' value={{excel_path}}></button>
             </form>
-            <p class="start">ПРОСЛУШАТЬ ЗАПИСЬ</p>
+            <p class="listen">ПРОСЛУШАТЬ ЗАПИСЬ</p>
         </div>
     </section>
 </body>

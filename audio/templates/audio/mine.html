@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Распознавание речи</title>
     <link rel="stylesheet" href="{% static 'main/css/normalize.min.css' %}">
-    <link rel="stylesheet" href="{% static 'main/css/secondary_pages.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/audio_pages.css' %}">
     <link href="https://fonts.cdnfonts.com/css/next-art" rel="stylesheet">
     <script type="text/javascript" src={% static "main/js/voice.js" %}></script>
 </head>
@@ -40,12 +40,16 @@
                     {% csrf_token %}
                     <button class="micro" type="submit" name='mybtn1' value={{excel_path}} data-show="false"></button>
              </form>
-            <p class="start">НАЧАТЬ ЗАПИСЬ</p>
-              <form action="{% url 'stop' %}" method="post">
-                    {% csrf_token %}
-                        <button type="submit" name='mybtn2' value={{excel_path}}>Закончить запись</button>
-             </form>
         </div>
+        <p class="start">НАЧАТЬ ЗАПИСЬ</p>
+        <div class="container">
+            <form action="{% url 'stop' %}" method="post">
+                {% csrf_token %}
+                <button class="micro2" type="submit" name='mybtn2' value={{excel_path}}></button>
+                <p class="end" name="record">ЗАКОНЧИТЬ ЗАПИСЬ</p>
+            </form>
+        </div>
+
     </section>
 </body>
 </html>

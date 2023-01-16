@@ -5,18 +5,18 @@ function stop() {
    self.location.href='withoutstop'
 }
 
-function start2() {
-    var button = document.getElementsByName('mybtn1');
-    var text = document.getElementsByName('record');
-    if ( button.getAttribute('data-show') === "false") {
-        text.innerText = "ЗАКОНЧИТЬ ЗАПИСЬ";
-        button.setAttribute('data-show', "true");
-        self.location.href='audio/withoutstart';
-    }
-    else {
-        self.location.href='withoutstop';
-    }
-}
+//function start2() {
+//    var button = document.getElementsByName('mybtn1');
+//    var text = document.getElementsByName('record');
+//    if ( button.getAttribute('data-show') === "false") {
+//        text.innerText = "ЗАКОНЧИТЬ ЗАПИСЬ";
+//        button.setAttribute('data-show', "true");
+//        self.location.href='audio/withoutstart';
+//    }
+//    else {
+//        self.location.href='withoutstop';
+//    }
+//}
 
 function fun1() {
     var rad=document.getElementsByName('state-d');
@@ -34,3 +34,6 @@ function fun1() {
       };
     };
 }
+$(".btn.third").click(function(){
+  $(this).prop('disabled',true)
+});

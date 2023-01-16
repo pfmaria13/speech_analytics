@@ -1,31 +1,9 @@
 from django.shortcuts import render
-from .models import Recordings
-from .forms import RecordingForm
 import numpy as np
-
-
-def without(request):
-    return render(request, 'audio/without.html')
-
-def advices(request):
-    return render(request, 'audio/advices.html')
-
-def withoutstart(request):
-    start()
-    return render(request, 'audio/withoutstart.html')
-
-
-def withoutstop(request):
-    # global audio
-    # audio = stop()
-    text = speech_recognition(audio)
-    text = 'hhuhiuhiuh'
-    words = word_analysis(text)
-    temp_analysis = temp(text, audio)
-    timing = time(audio)
-    frequency_value = getFreq(audio)
-    data = {'text': text, 'unnecessary_words': words, 'temp': temp_analysis, 'time': timing, 'freq': frequency_value}
-    return render(request, 'audio/withoutstop.html', data)
+import contextlib
+import pyaudio
+import wave
+import speech_recognition as speech_r
 
 
 def ready(request):
@@ -36,70 +14,12 @@ def mine(request):
     return render(request, 'audio/mine.html')
 
 
-# получение данных из бд
-def tips(request):
-    context = {'useful_value': 1}
-    records = Recordings.objects.get(id=1)
-    if request.method == "POST":
-        result = test(record_file=records.audio)
-    return render(request, 'audio/tips.html', {'records': result})
+def without(request):
+    return render(request, 'audio/without.html')
 
 
-# сохранение данных в бд
-# def create(request):
-#     form = RecordingForm()
-#     return render(request, 'audio/tips.html', {'form': form})
-
-
-def create(request):
-    if request.method == "POST":
-        form = RecordingForm()
-        form.name = request.POST.get("speed")
-        form.age = request.POST.get("text")
-        form.save()
-    return render(request, 'audio/tips.html', {'form': form})
-
-
-import contextlib
-import pyaudio
-import wave
-import speech_recognition as speech_r
-
-
-def record():
-    CHUNK = 1024
-    FORMAT = pyaudio.paInt16
-    CHANNELS = 2
-    RATE = 44100
-    RECORD_SECONDS = 5 #180
-    WAVE_OUTPUT_FILENAME = "output.wav"
-
-    p = pyaudio.PyAudio()
-
-    stream = p.open(format=FORMAT,
-                    channels=CHANNELS,
-                    rate=RATE,
-                    input=True,
-                    frames_per_buffer=CHUNK)
-
-    frames = []
-    for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-        data = stream.read(CHUNK)
-        frames.append(data)
-        # if keyboard.is_pressed('Space'):
-        #     break
-    stream.stop_stream()
-    stream.close()
-    p.terminate()
-
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-    wf.setnchannels(CHANNELS)
-    wf.setsampwidth(p.get_sample_size(FORMAT))
-    wf.setframerate(RATE)
-    wf.writeframes(b''.join(frames))
-    wf.close()
-    record_file = 'output.wav'
-    return record_file
+def advices(request):
+    return render(request, 'audio/advices.html')
 
 
 def start(request):
@@ -108,7 +28,6 @@ def start(request):
     CHANNELS = 1
     RATE = 44100
     RECORD_SECONDS = 180
-    WAVE_OUTPUT_FILENAME = "output.wav"
     swidth = 2
     window = np.blackman(CHUNK)
     global p
@@ -134,20 +53,49 @@ def start(request):
         if which != len(fftData) - 1:
             y0, y1, y2 = np.log(fftData[which - 1:which + 2:])
             x1 = (y2 - y0) * .5 / (2 * y1 - y2 - y0)
-            # find the frequency and output it
             thefreq = (which + x1) * RATE / CHUNK
             list_freq.append(thefreq)
         else:
             thefreq = which * RATE / CHUNK
             list_freq.append(thefreq)
-    return render(request, 'audio/without.html')
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
+    wf = wave.open("output.wav", 'wb')
+    wf.setnchannels(1)
+    wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
+    wf.setframerate(44100)
+    wf.writeframes(b''.join(frames))
+    wf.close()
+    global audio
+    audio = 'output.wav'
+    global text
+    text = speech_recognition(audio)
+    a = word_analysis(text)
+    global words
+    words = a[0]
+    global tip_words
+    tip_words = a[1]
+    global temp_analysis
+    temp_analysis = temp(text, audio)
+    global timing
+    timing = time(audio)
+    global frequency_value
+    frequency_value = np.mean(list_freq)
+    if (frequency_value > 500):
+        tip_freq = 'Ваш голос слишком высокий'
+    else:
+        tip_freq = ''
+    data = {'text': text, 'unnecessary_words': words,
+            'temp': temp_analysis, 'time': timing, 'freq': frequency_value,
+            'tip_words': tip_words, 'tip_freq': tip_freq}
+    return render(request, 'audio/advices.html', data)
 
 
 def stop(request):
     stream.stop_stream()
     stream.close()
     p.terminate()
-
     wf = wave.open("output.wav", 'wb')
     wf.setnchannels(1)
     wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
@@ -192,6 +140,7 @@ def speech_recognition(record_file):
     except speech_r.UnknownValueError:
         text = ''
     return text
+
 
 def time(record_file):
     with contextlib.closing(wave.open(record_file, 'r')) as f:
@@ -254,10 +203,9 @@ def play(request):
     stream.close()
     p.terminate()
     data = {'text': text, 'unnecessary_words': words, 'temp': temp_analysis, 'time': timing, 'freq': frequency_value, 'tip_words': tip_words}
-    return render(request, 'audio/withoutstop.html', data)
+    return render(request, 'audio/advices.html', data)
 
 
-from scipy.io import wavfile
 def getFreq(audio):
     chunk = 1024
     wf = wave.open(audio, 'rb')

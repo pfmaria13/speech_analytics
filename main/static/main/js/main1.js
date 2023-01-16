@@ -14,3 +14,10 @@ function fun1() {
       };
     };
 }
+
+function start() {
+    self.location.href='audio/withoutstart';
+}
+function stop() {
+   self.location.href='withoutstop'
+}

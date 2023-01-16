@@ -23,40 +23,53 @@ body {
 
  .switch-toggle input {
    position: absolute;
-   opacity: 0; 
+   opacity: 0;
  }
 
  .switch-toggle input + label {
    float:left;
    color: #fff;
    cursor: pointer;
-   margin: 3px 3px; 
+   margin: 3px 3px;
  }
 
  .switch-toggle input:checked + label {
    background: #fff;
    border-radius: 40px;
-   color: #687CB7;  
+   color: #687CB7;
  }
 
-.start {
+ .start {
     font-family: 'NEXT ART';
     font-weight: 400;
-    font-size: 8px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 23px;
     text-align: center;
-    letter-spacing: 0.035em;
+    letter-spacing: 0.10em;
     color: #687CB7;
-    font-size: 40px;
-    margin-right: -35px;
+    font-size: 36px;
+    margin-right: 470px;
+    margin-bottom: 210px;
+}
+
+.end {
+    font-family: 'NEXT ART';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.10em;
+    color: #687CB7;
+    font-size: 36px;
+    margin-right: -420px;
+    margin-bottom: 210px;
 }
 
 .micro {
-    background: url(../img/Group\ 17\ \(1\).png) no-repeat;
-    background-size: 100%;
-    margin-left: 555px;
+    background: url(../img/Group20.png) no-repeat;
+    margin-left: 310px;
     margin-top: 45px;
-    width: 224px; 
+    width: 224px;
     height: 224px;
     border-radius: 50%;
 }
@@ -92,21 +105,70 @@ body {
     transition: background 0.3s color 0.2s, text-shadow 0.3s box-shadow 0.3s;
 }
 
-.rectangle {
+.micro2 {
+    background: url(../img/Group21.png) no-repeat;
+    margin-left: 740px;
+    margin-top: -495px;
+    width: 224px;
+    height: 224px;
+    border-radius: 50%;
     display: flex;
+}
+
+.micro2:hover {
+    cursor: pointer;
+
+    box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.15),
+        inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+        1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+
+    text-shadow: 3px -3px 5px rgba(143, 162, 199, 1),
+        -3px 3px 5px rgba(192, 151, 178, 1);
+
+    -webkit-transition: box-shadow 0.4s, text-shadow 0.5s;
+    -moz-transition: box-shadow 0.4s, text-shadow 0.5s;
+    transition: box-shadow 0.4s, text-shadow 0.5s;
+}
+
+.micro2:active {
+    color: rgba(192, 181, 218, 1);
+
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.15),
+        1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+
+    text-shadow: 1px -1px 1px rgba(143, 162, 199, 0.75),
+        -1px 1px 1px rgba(192, 151, 178, 0.75);
+
+    -webkit-transition: background 0.3s color 0.2s,
+        text-shadow 0.3s box-shadow 0.3s;
+    -moz-transition: background 0.3s color 0.2s,
+        text-shadow 0.3s box-shadow 0.3s;
+    transition: background 0.3s color 0.2s, text-shadow 0.3s box-shadow 0.3s;
+}
+
+.rectangle {
+    display: inline-block;
     border-radius: 50px;
     background-color: #687CB7;
     width: 1052px;
-    height: 462px;
+    min-height: 462px;
     margin-left: 145px;
+    font-family: 'Verdana';
+    color: #fff;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    padding: 20px;
 }
+
+
 
 .ready_text{
     font-family: 'Verdana';
     color: #fff;
     font-size: 26px;
     line-height: 32px;
-    width: 968px;
+    max-width: 968px;
     height: 18px;
     text-align: left;
     margin-left: 60px;
@@ -118,12 +180,10 @@ textarea {
     height: 310px;
     width:100%;
     resize: vertical;
-    padding:15px;
     border-radius:30px;
     border:0;
     box-shadow:4px 4px 10px rgba(0,0,0,0.06);
     margin-top: 80px;
-    margin-left: 260px;
 }
 
 .inputic {
@@ -145,7 +205,7 @@ textarea {
     background-size: 100%;
     margin-left: 555px;
     margin-top: 45px;
-    width: 224px; 
+    width: 224px;
     height: 224px;
     border-radius: 50%;
 }
@@ -162,4 +222,17 @@ textarea {
     font-size: 26px;
     line-height: 32px;
     text-align: center;
+}
+
+.listen{
+    font-family: 'NEXT ART';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.10em;
+    color: #687CB7;
+    font-size: 36px;
+    margin-right: -40px;
+    margin-bottom: 210px;
 }
